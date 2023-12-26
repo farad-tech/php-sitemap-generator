@@ -9,21 +9,20 @@ class XMLController extends Controller
 
     public function static_pages()
     {
+        $app_url = 'http://localhost';
         return [
-            ['1.0', route('home')],
-            ['0.95', route('about-us')],
-            ['0.95', route('services')],
-            ['0.95', route('projects')],
-            ['0.95', route('our-team')],
-            ['0.95', route('contact-us')],
-            ['0.95', route('blog')],
+            ['1.0', $app_url.'/'],
+            ['0.95', $app_url.'/about-us'],
+            ['0.95', $app_url.'/services'],
+            ['0.95', $app_url.'/projects'],
+            ['0.95', $app_url.'/our-team'],
+            ['0.95', $app_url.'/contact-us'],
+            ['0.95', $app_url.'/blog'],
         ];
     }
 
     public function index()
     {
-
-
 
         $xw = xmlwriter_open_memory();
         xmlwriter_set_indent($xw, 1);
